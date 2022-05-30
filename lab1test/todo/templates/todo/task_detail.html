@@ -1,0 +1,11 @@
+{% extends 'todo/shared.html'%}
+{% block content %}.
+name:{{ task.name }}</br>
+place:{{ task.place }}</br>
+Priority:{{ task.Priority }}</br>
+duration:{{ task.duration }} Hours</br>
+
+
+<center><a class="btn btn-primary" href='{% url 'todo:home'  %}'>Back home</a></center>
+
+{% endblock %}
