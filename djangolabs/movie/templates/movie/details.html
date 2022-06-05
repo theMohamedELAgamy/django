@@ -1,0 +1,28 @@
+{% extends 'genaric/shared.html'%}
+
+{% block content %}
+<center>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+     <h3 class="card-title"> Name:{{movie.name}}</h3>
+      <h5 class="card-title">production year:{{movie.production_year}}</h5>
+      <h5 class="card-title">creation time:{{movie.creation_time}}</h5>
+      <h5 class="card-title">Director:{{movie.director.name}}</h5>
+      <ul class="list-inline">
+          <li>      Actors:
+        </li>
+        <ul>
+        {% for actor in actors %}
+        <li class="list-inline-item">{{actor.name}}</li>
+        {% endfor %}
+    </ul>
+      </ul>
+       
+
+        
+        
+    </div>
+  </div>
+</center>
+   
+{% endblock %}

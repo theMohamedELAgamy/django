@@ -1,0 +1,27 @@
+{% extends 'genaric/shared.html'%}
+
+{% block content %}
+<center>
+<div class="card" style="width: 18rem;">
+    <img src="{{request.scheme}}://{{request.get_host}}{{actor.profile_image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+     <h3 class="card-title"> Name:{{actor.name}}</h3>
+      <h5 class="card-title">gender:{{actor.gender}}</h5>
+      <ul class="list-inline">
+          <li>      Movies:
+        </li>
+        <ul>
+        {% for movie in movies %}
+        <li class="list-inline-item">{{movie.name}}</li>
+        {% endfor %}
+    </ul>
+      </ul>
+       
+
+        
+        
+    </div>
+  </div>
+</center>
+   
+{% endblock %}

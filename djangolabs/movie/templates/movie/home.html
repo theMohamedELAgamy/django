@@ -1,0 +1,47 @@
+{% extends 'genaric/shared.html'%}
+
+{% block content %}
+
+
+<table class="table table-hover table-dark table-striped">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>production year</th>
+            <th>creation time</th>
+            <th>Director</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>    
+    <tbody>
+        {% for movie in movies%}
+        <tr >
+           
+            <td>{{ movie.name}}</td>
+            <td>{{ movie.production_year }}</td>
+            <td>{{ movie.creation_time }}</td>
+            <td>{{ movie.director.name }}</td>
+            
+            
+            
+          
+            <td>
+                <a href="{% url 'movie:details' movie.id %}" class="btn btn-info" >Details</a>
+                <a href="{% url 'movie:delete' movie.id %}" class="btn btn-danger" >Delete</a>
+                <a href="{% url 'movie:update' movie.id %}" class="btn btn-danger" >update</a>
+
+                
+            </td>
+
+        </tr>
+        
+        {%endfor %}
+        
+
+    </tbody>
+  </table>
+  <center><a href="{% url 'movie:create' %}" class="btn btn-primary">Add</a></center>
+
+
+{% endblock %}
